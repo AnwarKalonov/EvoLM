@@ -1,0 +1,42 @@
+{
+  "base_config": "configs/baseline_quick.json",
+  "seed": 42,
+  "generations": 2,
+  "top_k": 2,
+  "children_per_generation": 3,
+  "mutation_rate": 0.55,
+  "population": [
+    {
+      "model": {"n_layers": 3, "n_heads": 4, "d_model": 192},
+      "train": {"max_steps": 200, "learning_rate": 0.0005}
+    },
+    {
+      "model": {"n_layers": 4, "n_heads": 4, "d_model": 256},
+      "train": {"max_steps": 220, "learning_rate": 0.0004}
+    },
+    {
+      "model": {"n_layers": 5, "n_heads": 6, "d_model": 192},
+      "train": {"max_steps": 220, "learning_rate": 0.00035}
+    }
+  ],
+  "search_space": {
+    "model": {
+      "n_layers": [3, 4, 5, 6],
+      "n_heads": [2, 3, 4, 6],
+      "d_model": [192, 256, 384]
+    },
+    "train": {
+      "learning_rate": [0.00025, 0.00035, 0.0004, 0.0005],
+      "batch_size": [12, 16, 20],
+      "max_steps": [180, 220, 260]
+    },
+    "data": {
+      "block_size": [96, 128]
+    }
+  },
+  "dev_log": [
+    "Wanted evolution testing without burning a whole day.",
+    "Search space is intentionally smaller so experiments finish quicker.",
+    "Current status: best config for short demo-style evolution runs."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "base_config": "configs/baseline.json",
+  "runs": [
+    {
+      "run_name": "gene_l6_h8_d512",
+      "model": {"n_layers": 6, "n_heads": 8, "d_model": 512},
+      "train": {"max_steps": 600}
+    },
+    {
+      "run_name": "gene_l8_h8_d512",
+      "model": {"n_layers": 8, "n_heads": 8, "d_model": 512},
+      "train": {"max_steps": 600}
+    },
+    {
+      "run_name": "gene_l8_h6_d384",
+      "model": {"n_layers": 8, "n_heads": 6, "d_model": 384},
+      "train": {"max_steps": 600}
+    }
+  ],
+  "dev_log": [
+    "Used this to compare fixed architecture variants side-by-side.",
+    "Helped confirm if changes were real or just random noise.",
+    "Current status: quick baseline comparison before deeper evolution."
+  ]
+}

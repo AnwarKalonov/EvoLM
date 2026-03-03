@@ -1,0 +1,42 @@
+{
+  "base_config": "configs/baseline.json",
+  "seed": 42,
+  "generations": 2,
+  "top_k": 2,
+  "children_per_generation": 3,
+  "mutation_rate": 0.6,
+  "population": [
+    {
+      "model": {"n_layers": 6, "n_heads": 8, "d_model": 512},
+      "train": {"max_steps": 400, "learning_rate": 0.0003}
+    },
+    {
+      "model": {"n_layers": 8, "n_heads": 8, "d_model": 512},
+      "train": {"max_steps": 400, "learning_rate": 0.0003}
+    },
+    {
+      "model": {"n_layers": 8, "n_heads": 6, "d_model": 384},
+      "train": {"max_steps": 400, "learning_rate": 0.0004}
+    }
+  ],
+  "search_space": {
+    "model": {
+      "n_layers": [4, 6, 8, 10],
+      "n_heads": [4, 6, 8],
+      "d_model": [256, 384, 512]
+    },
+    "train": {
+      "learning_rate": [0.0002, 0.0003, 0.0004, 0.0006],
+      "batch_size": [16, 24, 32],
+      "max_steps": [400, 600]
+    },
+    "data": {
+      "block_size": [128, 256]
+    }
+  },
+  "dev_log": [
+    "Built this after early runs plateaued and needed stronger exploration.",
+    "Bigger search space than quick mode for more serious architecture discovery.",
+    "Current status: balanced setting for real evolution experiments on laptop."
+  ]
+}

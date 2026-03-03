@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pycache/
+*.pyc
+outputs/
+data/
+.DS_Store
+
+# DEV LOG
+# - Problem: cache/junk files kept polluting the workspace.
+# - Fix: expanded ignores for cleaner runs and easier commits.
+# - Status: keeping this tight so repo stays clean.

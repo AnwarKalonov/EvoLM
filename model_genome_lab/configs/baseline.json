@@ -1,0 +1,36 @@
+{
+  "run_name": "baseline_30m",
+  "seed": 42,
+  "device": "auto",
+  "data": {
+    "dataset": "tiny_shakespeare",
+    "block_size": 256,
+    "train_split": 0.9,
+    "data_dir": "data"
+  },
+  "model": {
+    "vocab_size": 0,
+    "n_layers": 8,
+    "n_heads": 8,
+    "d_model": 512,
+    "dropout": 0.1
+  },
+  "train": {
+    "batch_size": 24,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.1,
+    "betas": [0.9, 0.95],
+    "grad_clip": 1.0,
+    "eval_interval": 100,
+    "eval_steps": 30,
+    "max_steps": 1000,
+    "warmup_steps": 100,
+    "gradient_accumulation_steps": 1,
+    "save_interval": 200
+  },
+  "dev_log": [
+    "Hit random training stalls and had to tune quick-first before long runs.",
+    "Keeping this baseline as the stable reference config for comparisons.",
+    "Current status: reliable default when testing new code changes."
+  ]
+}

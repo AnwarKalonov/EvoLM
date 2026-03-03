@@ -1,0 +1,8 @@
+torch>=2.2
+numpy>=1.26
+requests>=2.31
+
+# DEV LOG
+# - Problem: setup confusion from env to env.
+# - Fix: keeping deps minimal on purpose so install is simple.
+# - Status: current stack is enough for the prototype.
